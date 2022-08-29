@@ -26,3 +26,15 @@ li {
   border: 1px solid rgba(160, 156, 156, 0.656);
   border-radius: 10px;
 }
+.weather-temperature {
+  margin-top: 10px;
+}
+.weather-temperature img {
+  margin-right: 10px;
+}
+.weather-temperature strong {
+  color: rgba(49, 48, 48, 0.902);
+  font-size: 52px;
+  line-height: 1;
+  font-weight: 300px;
+}
