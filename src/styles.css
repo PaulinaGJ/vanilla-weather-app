@@ -16,6 +16,9 @@ ul {
 li {
   list-style: none;
   color: rgba(116, 112, 112, 0.902);
+}
+
+li:first-letter {
   text-transform: capitalize;
 }
 .weather-app-border {
