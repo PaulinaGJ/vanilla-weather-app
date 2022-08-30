@@ -16,6 +16,7 @@ ul {
 li {
   list-style: none;
   color: rgba(116, 112, 112, 0.902);
+  text-transform: capitalize;
 }
 .weather-app-border {
   max-width: 600px;

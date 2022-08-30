@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" href="src/styles.css" />
     <title>Vanilla weather app</title>
@@ -22,10 +23,10 @@
     <div class="container">
       <div class="weather-app-border">
         <div class="weather-app">
-          <h1>Dublin</h1>
+          <h1 id="city"></h1>
           <ul>
             <li>Friday, 11:35</li>
-            <li>Cloudy</li>
+            <li id="condition">Cloudy</li>
           </ul>
           <div class="row">
             <div class="col-6">
@@ -35,14 +36,14 @@
                   alt="Cloudy"
                   id="main-icon"
                 />
-                <strong>15</strong>
+                <strong id="temperature"></strong>
                 <span class="units"> ℃l℉ </span>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Humidity 80%</li>
-                <li>Wind 3km/h</li>
+                <li>Humidity <span id="humidity"> </span> %</li>
+                <li>Wind <span id="wind"> </span> km/h</li>
               </ul>
             </div>
           </div>
