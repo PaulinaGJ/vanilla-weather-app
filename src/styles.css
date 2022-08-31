@@ -21,6 +21,7 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+
 .weather-app-border {
   max-width: 600px;
   margin: 30px auto;
@@ -54,4 +55,8 @@ li:first-letter {
 .units #celsius-conversion,
 #fahrenheit-conversion {
   text-decoration: none;
+}
+
+#search-form {
+  margin-bottom: 20px;
 }

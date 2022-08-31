@@ -18,20 +18,6 @@ function displayTemperature(response) {
   celsiusTemperature = response.data.main.temp;
 }
 
-let currentDate = new Date();
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[currentDate.getDay()];
-let hour = currentDate.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minutes = currentDate.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let dateElement = document.querySelector("#date");
-dateElement.innerHTML = `${day}, ${hour}:${minutes}`;
-
 function search(city) {
   let apiKey = "9deff0d49319322e8b7031db0c883dd7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -68,5 +54,19 @@ fahrenheitConversion.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusConversion = document.querySelector("#celsius-conversion");
 celsiusConversion.addEventListener("click", displayCelsiusTemperature);
+
+let currentDate = new Date();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let day = days[currentDate.getDay()];
+let hour = currentDate.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
+let minutes = currentDate.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+let dateElement = document.querySelector("#date");
+dateElement.innerHTML = `${day}, ${hour}:${minutes}`;
 
 search("Dublin");
