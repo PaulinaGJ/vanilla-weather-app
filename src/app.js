@@ -15,11 +15,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   mainIconElement.setAttribute("alt", response.data.weather[0].description);
-}
-function search(city) {
-  let apiKey = "9deff0d49319322e8b7031db0c883dd7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
+  celsiusTemperature = response.data.main.temp;
 }
 
 let currentDate = new Date();
@@ -36,10 +32,41 @@ if (minutes < 10) {
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = `${day}, ${hour}:${minutes}`;
 
+function search(city) {
+  let apiKey = "9deff0d49319322e8b7031db0c883dd7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 function searchCity(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  celsiusConversion.classList.remove("active");
+  fahrenheitConversion.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusConversion.classList.add("active");
+  fahrenheitConversion.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+
+let celsiusTemperature = null;
+
+let fahrenheitConversion = document.querySelector("#fahrenheit-conversion");
+fahrenheitConversion.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusConversion = document.querySelector("#celsius-conversion");
+celsiusConversion.addEventListener("click", displayCelsiusTemperature);
+
+search("Dublin");

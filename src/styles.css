@@ -42,3 +42,16 @@ li:first-letter {
   line-height: 1;
   font-weight: 300px;
 }
+
+.weather-temperature .active {
+  color: rgba(49, 48, 48, 0.902);
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.units #celsius-conversion,
+#fahrenheit-conversion {
+  text-decoration: none;
+}
