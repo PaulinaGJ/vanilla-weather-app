@@ -1,5 +1,4 @@
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
@@ -17,12 +16,12 @@ function displayTemperature(response) {
   );
   mainIconElement.setAttribute("alt", response.data.weather[0].description);
 }
+function search(city) {
+  let apiKey = "9deff0d49319322e8b7031db0c883dd7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-let apiKey = "9deff0d49319322e8b7031db0c883dd7";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Oslo&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
-
-//Date
 let currentDate = new Date();
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let day = days[currentDate.getDay()];
@@ -36,3 +35,11 @@ if (minutes < 10) {
 }
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = `${day}, ${hour}:${minutes}`;
+
+function searchCity(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
