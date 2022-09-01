@@ -65,6 +65,20 @@ li:first-letter {
 #search-form {
   margin-bottom: 20px;
 }
+
+.today-forcast {
+  border: 2px solid rgb(199, 163, 89);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 3px;
+  margin-bottom: 40px;
+}
+
+.line {
+  border: 1px solid #fcf0eb;
+  max-width: 95%;
+  margin: 5px auto 10px;
+}
 .weather-forecast-temperature-max {
   opacity: 0.8;
 }
