@@ -31,9 +31,7 @@ li:first-letter {
   border: 1px solid rgba(160, 156, 156, 0.656);
   border-radius: 10px;
 }
-.weather-temperature {
-  margin-top: 10px;
-}
+
 .weather-temperature img {
   margin-right: 10px;
 }
@@ -43,13 +41,20 @@ li:first-letter {
   line-height: 1;
   font-weight: 300px;
 }
-
+.weather-temperature .units {
+  position: relative;
+  top: -28px;
+}
 .weather-temperature .active {
   color: rgba(49, 48, 48, 0.902);
   cursor: default;
 }
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.main-info {
+  margin-top: 20px;
 }
 
 .units #celsius-conversion,
