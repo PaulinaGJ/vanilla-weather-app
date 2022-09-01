@@ -53,7 +53,7 @@ li:first-letter {
   text-decoration: none;
 }
 
-.main-info {
+.current-forecast {
   margin-top: 20px;
 }
 
@@ -64,4 +64,11 @@ li:first-letter {
 
 #search-form {
   margin-bottom: 20px;
+}
+.weather-forecast-temperature-max {
+  opacity: 0.8;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }
