@@ -44,6 +44,24 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-6 weather-forecast-date">${day}</div>
+  <div class="col-6 weather-forecast-temperature"> 
+  <span class="weather-forecast-temperature-max"> 16℃</span> | <span class="weather-forecast-temperature-min">11℃</span> 
+  <br/><img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" width="36" class="forecast-img">
+  </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
@@ -70,3 +88,4 @@ let dateElement = document.querySelector("#date");
 dateElement.innerHTML = `${day}, ${hour}:${minutes}`;
 
 search("Dublin");
+displayForecast();

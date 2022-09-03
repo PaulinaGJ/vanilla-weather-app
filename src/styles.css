@@ -67,15 +67,10 @@ li:first-letter {
 }
 
 .today-forcast {
-  border: 2px solid rgb(199, 163, 89);
-  border-radius: 20px;
-  padding: 10px;
-  margin: 3px;
   margin-bottom: 40px;
 }
-
 .line {
-  border: 1px solid #fcf0eb;
+  border: 1px solid #5c636a70;
   max-width: 95%;
   margin: 5px auto 10px;
 }
@@ -85,4 +80,8 @@ li:first-letter {
 
 .weather-forecast-temperature-min {
   opacity: 0.5;
+}
+
+.forecast-img {
+  margin-left: 20px;
 }
