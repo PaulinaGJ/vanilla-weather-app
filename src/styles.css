@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: rgba(116, 112, 112, 0.902);
+  color: rgba(255, 255, 255, 0.902);
   font-size: 30px;
   line-height: 30px;
 }
@@ -15,28 +15,31 @@ ul {
 
 li {
   list-style: none;
-  color: rgba(116, 112, 112, 0.902);
+  color: rgba(255, 255, 255, 0.902);
 }
 
 li:first-letter {
   text-transform: capitalize;
 }
-
 .weather-app-border {
   max-width: 600px;
   margin: 30px auto;
 }
 .weather-app {
   padding: 20px;
-  border: 1px solid rgba(160, 156, 156, 0.656);
+  border: 1px solid rgba(255, 255, 255, 0.902);
   border-radius: 10px;
+  position: relative;
+  background-image: url("orange.jpg");
+  background-size: cover;
 }
 
 .weather-temperature img {
   margin-right: 10px;
+  margin-bottom: 30px;
 }
 .weather-temperature strong {
-  color: rgba(49, 48, 48, 0.902);
+  color: rgba(255, 255, 255, 0.902);
   font-size: 52px;
   line-height: 1;
   font-weight: 300px;
@@ -46,7 +49,7 @@ li:first-letter {
   top: -28px;
 }
 .weather-temperature .active {
-  color: rgba(49, 48, 48, 0.902);
+  color: rgba(255, 255, 255, 0.902);
   cursor: default;
 }
 .weather-temperature .active:hover {
@@ -84,4 +87,14 @@ li:first-letter {
 
 .forecast-img {
   margin-left: 20px;
+}
+
+.future-forecast {
+  color: #ffff;
+  font-family: "Montserrat", sans-serif;
+  margin: 8px;
+}
+
+.sign {
+  color: rgba(255, 255, 255, 0.902);
 }
