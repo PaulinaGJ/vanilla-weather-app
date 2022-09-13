@@ -59,7 +59,7 @@ function formatDay(timestamp) {
   let days = [
     "Sunday",
     "Monday",
-    "Tueday",
+    "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
@@ -90,7 +90,7 @@ function displayForecast(response) {
         )}℃</span> 
   <br/><img src="http://openweathermap.org/img/wn/${
     forecastDay.weather[0].icon
-  }@2x.png" alt="" width="36" class="forecast-img">
+  }@2x.png" alt="" class="forecast-img">
   </div> </p>`;
     }
   });
@@ -123,4 +123,18 @@ if (minutes < 10) {
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = `${day}, ${hour}:${minutes}`;
 
-search("Dublin");
+function searchLocation(position) {
+  let apiKey = "9deff0d49319322e8b7031db0c883dd7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector("#location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+search("Prague");
