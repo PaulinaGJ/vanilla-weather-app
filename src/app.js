@@ -90,7 +90,7 @@ function displayForecast(response) {
         )}℃</span> 
   <br/><img src="http://openweathermap.org/img/wn/${
     forecastDay.weather[0].icon
-  }@2x.png" alt="" class="forecast-img">
+  }@2x.png" alt="Weather icon" class="forecast-img">
   </div> </p>`;
     }
   });

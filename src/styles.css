@@ -104,3 +104,7 @@ li:first-letter {
 #forecast {
   font-size: 20px;
 }
+
+#b-img {
+  max-width: 15%;
+}
